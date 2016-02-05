@@ -32,10 +32,7 @@ class BackgroundWorker(threading.Thread):
 		BackgroundWorker.lock.acquire()
 		BackgroundWorker.lock.release()
 
-		if self.getName() is "local":
-			print 'local: %s \r' % (self._obj.getDigest())
-		elif self.getName() is "remote":
-			print 'remote: %s \r' % (self._obj.getDigest())
+		print '%s: %s \r' % (self.getName(), self._obj.getDigest())
 
 	def doWork(self):
 		self._obj.hashfile()
