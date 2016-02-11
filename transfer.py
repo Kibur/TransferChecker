@@ -17,7 +17,7 @@ class BackgroundWorker(threading.Thread):
 		return self._wait
 
 	def run(self):
-        print '"%s" thread started' % (self.getName())
+		print '"%s" thread started' % (self.getName())
 
 		while (not self.stopped()):
 			try:
